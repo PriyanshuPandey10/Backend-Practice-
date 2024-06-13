@@ -7,11 +7,11 @@ app.use(function (req, res, next) {
     next();
   });
 
-
+  app.set("view engine","ejs");
 //Routes
  
 app.get('/', function (req, res) {
-  res.send('Hello World');
+  res.render('index');
 })
 app.get('/profile', function (req, res) {
     res.send('Hello World from Profile');
@@ -27,7 +27,7 @@ app.get('/contact', function (req, res) {
   })
 
     //Dynamic Route
-    
+
 app.get('/contact/:user', function (req, res) {
     res.send(`Contact to ${req.params.user}`);
   })
